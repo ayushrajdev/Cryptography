@@ -9,7 +9,7 @@ const hashOfFile = buffer.subarray(36).toString('utf8');
 const newSignature = crypto
     .createHash('sha256')
     .update(fileBuffer)
-    .update('my-super-secret-key')
+    .update(mySecretkey)
     .digest('hex');
 
 console.log({ hashOfFile, newSignature });
